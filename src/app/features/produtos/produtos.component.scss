@@ -1,0 +1,40 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.form-card {
+  margin-bottom: 24px;
+  padding: 16px;
+}
+
+.field {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.table-card {
+  padding: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.badge-ativo {
+  background: #4caf50;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.badge-inativo {
+  background: #f44336;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}

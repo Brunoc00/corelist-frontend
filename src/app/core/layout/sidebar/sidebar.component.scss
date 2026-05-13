@@ -1,0 +1,24 @@
+.logo {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+
+  .logo-img {
+    width: 160px;
+    object-fit: contain;
+  }
+}
+
+mat-nav-list a {
+  color: rgba(255,255,255,0.7);
+}
+
+mat-nav-list a.active {
+  color: white;
+  background: rgba(255,255,255,0.15);
+  border-left: 3px solid #42a5f5;
+}
+
+mat-icon {
+  color: rgba(255,255,255,0.7);
+}

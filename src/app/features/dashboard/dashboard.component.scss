@@ -1,0 +1,45 @@
+h2 {
+  margin-bottom: 24px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+}
+
+.icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.numero {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.label {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.azul { color: #1565c0; }
+.verde { color: #4caf50; }
+.roxo { color: #7b1fa2; }
+.laranja { color: #ef6c00; }
+.vermelho { color: #f44336; }

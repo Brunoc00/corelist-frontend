@@ -1,0 +1,80 @@
+<div class="page-header">
+  <h2>Produtos</h2>
+  <button mat-raised-button color="primary" (click)="abrirForm()">
+    <mat-icon>add</mat-icon> Adicionar Produto
+  </button>
+</div>
+
+<!-- Formulário -->
+<mat-card *ngIf="mostrarForm" class="form-card">
+  <mat-card-title>{{ editando ? 'Editar' : 'Novo' }} Produto</mat-card-title>
+  <mat-card-content>
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="form.nome" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Preço</mat-label>
+      <input matInput type="number" [(ngModel)]="form.preco" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field">
+      <mat-label>Categoria</mat-label>
+      <mat-select [(ngModel)]="form.categoria">
+        <mat-option *ngFor="let cat of categorias" [value]="cat.id">
+          {{ cat.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+    <button mat-button (click)="cancelar()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- Tabela -->
+<mat-card class="table-card">
+  <table mat-table [dataSource]="produtos" class="full-width">
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let p">{{ p.nome }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="preco">
+      <th mat-header-cell *matHeaderCellDef>Preço</th>
+      <td mat-cell *matCellDef="let p">R$ {{ p.preco }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="categoria">
+      <th mat-header-cell *matHeaderCellDef>Categoria</th>
+      <td mat-cell *matCellDef="let p">{{ getNomeCategoria(p.categoria) }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let p">
+        <span [class]="p.is_active ? 'badge-ativo' : 'badge-inativo'">
+          {{ p.is_active ? 'Ativo' : 'Inativo' }}
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let p">
+        <button mat-icon-button color="primary" (click)="editar(p)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deletar(p.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+  </table>
+</mat-card>
