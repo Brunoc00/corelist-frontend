@@ -6,7 +6,7 @@ import {Produto} from '../../shared/models/produto';
   providedIn: 'root'
 })
 export class ProdutoService {
-  private api = 'http://127.0.0.1:8000/api/produtos/';
+  private api = 'http://127.0.0.1:8000/api/compras/produtos/';
 
   constructor(private http: HttpClient) {}
 
