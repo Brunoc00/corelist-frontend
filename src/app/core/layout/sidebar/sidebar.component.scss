@@ -1,29 +1,42 @@
 .logo {
   padding: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   text-align: center;
-
-  .logo-img {
-    width: 160px;
-    object-fit: contain;
-  }
-}
-
-mat-nav-list a {
-  color: rgba(255,255,255,0.7);
-}
-
-mat-nav-list a.active {
-  color: white;
-  background: rgba(255,255,255,0.15);
-  border-left: 3px solid #42a5f5;
-}
-
-mat-icon {
-  color: rgba(255,255,255,0.7);
 }
 
 #logo {
   width: 15rem;
   height: 11rem;
+  object-fit: contain;
+}
+
+mat-nav-list {
+  padding-top: 8px;
+}
+
+mat-nav-list a {
+  color: rgba(255,255,255,0.75);
+  margin: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+mat-nav-list a:hover {
+  color: white;
+  background: rgba(255,255,255,0.1);
+}
+
+mat-nav-list a.active {
+  color: white;
+  background: #7C3AED;
+  border-left: 3px solid #F8FAFC;
+}
+
+mat-icon {
+  color: white !important;
+}
+
+span {
+  color: white;
+  font-weight: 500;
 }

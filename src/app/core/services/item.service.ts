@@ -7,7 +7,7 @@ import {Item} from '../../shared/models/item';
   providedIn: 'root'
 })
 export class ItemService {
-  private api = 'http://127.0.0.1:8000/api/compras/listas/'
+  private api = 'http://127.0.0.1:8000/api/compras/itens/'
 
   constructor(private http: HttpClient) {}
 

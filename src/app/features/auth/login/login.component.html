@@ -1,1 +1,73 @@
-<p>login works!</p>
+<div class="login-container">
+
+  <!-- LADO ESQUERDO -->
+  <div class="left">
+    <div class="logo">
+      <h2><span>Core</span>List</h2>
+      <p>Gestão inteligente de compras</p>
+    </div>
+
+    <div class="info">
+      <h1>
+        Gestão inteligente <br />
+        <span>de compras</span>
+      </h1>
+
+      <p>
+        Organize suas listas, controle produtos e tenha tudo o que você precisa em um só lugar.
+      </p>
+
+      <div class="features">
+        <p><strong>Listas Inteligentes</strong><br>Crie e gerencie listas de compras de forma prática.</p>
+        <p><strong>Produtos organizados</strong><br>Cadastre e categorize seus produtos.</p>
+        <p><strong>Acesso Seguro</strong><br>Controle de usuários e permissões do sistema.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LADO DIREITO -->
+  <div class="right">
+
+    <h1>Entrar na sua conta</h1>
+    <p class="subtitle">Digite seus dados para acessar o CoreList</p>
+
+    <!-- 👇 FORM CORRETO -->
+    <form (ngSubmit)="entrar()">
+
+      <!-- EMAIL -->
+      <input
+        type="text"
+        placeholder="seu@gmail.com"
+        name="username"
+        [(ngModel)]="username"
+      />
+
+      <!-- SENHA -->
+      <input
+        type="password"
+        placeholder="Digite sua senha"
+        name="password"
+        [(ngModel)]="password"
+      />
+
+      <!-- CHECKBOX -->
+      <div>
+        <input type="checkbox" />
+        <label>Lembre-me</label>
+      </div>
+
+      <!-- BOTÃO -->
+      <button type="submit">
+        Entrar
+      </button>
+
+      <!-- ERRO -->
+      <p *ngIf="errorMsg" style="color: red;">
+        {{ errorMsg }}
+      </p>
+
+    </form>
+
+  </div>
+
+</div>

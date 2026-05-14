@@ -1,8 +1,13 @@
-<h2>Dashboard</h2>
+<div class="page-header">
+  <h2>Dashboard</h2>
+  <span class="subtitulo">Visão geral do sistema</span>
+</div>
 
 <div class="cards">
   <mat-card class="card">
-    <mat-icon class="icon azul">people</mat-icon>
+    <div class="card-icon azul">
+      <mat-icon>people</mat-icon>
+    </div>
     <div class="info">
       <span class="numero">{{ totalUsuarios }}</span>
       <span class="label">Usuários</span>
@@ -10,7 +15,9 @@
   </mat-card>
 
   <mat-card class="card">
-    <mat-icon class="icon verde">category</mat-icon>
+    <div class="card-icon roxo">
+      <mat-icon>category</mat-icon>
+    </div>
     <div class="info">
       <span class="numero">{{ totalCategorias }}</span>
       <span class="label">Categorias</span>
@@ -18,7 +25,9 @@
   </mat-card>
 
   <mat-card class="card">
-    <mat-icon class="icon roxo">inventory</mat-icon>
+    <div class="card-icon escuro">
+      <mat-icon>inventory</mat-icon>
+    </div>
     <div class="info">
       <span class="numero">{{ totalProdutos }}</span>
       <span class="label">Produtos</span>
@@ -26,7 +35,9 @@
   </mat-card>
 
   <mat-card class="card">
-    <mat-icon class="icon laranja">list_alt</mat-icon>
+    <div class="card-icon cinza">
+      <mat-icon>list_alt</mat-icon>
+    </div>
     <div class="info">
       <span class="numero">{{ totalListas }}</span>
       <span class="label">Listas</span>
@@ -34,7 +45,9 @@
   </mat-card>
 
   <mat-card class="card">
-    <mat-icon class="icon vermelho">shopping_cart</mat-icon>
+    <div class="card-icon azul">
+      <mat-icon>shopping_cart</mat-icon>
+    </div>
     <div class="info">
       <span class="numero">{{ totalItens }}</span>
       <span class="label">Itens</span>

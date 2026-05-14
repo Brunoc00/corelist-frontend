@@ -1,6 +1,19 @@
-.container { height: 100vh; }
-.sidenav { width: 250px; background: #1a237e; }
-.content { display: flex; flex-direction: column; }
+.container {
+  height: 100vh;
+}
+
+mat-sidenav {
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  background: #1a237e;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
   padding: 24px;
   background: #f5f5f5;
