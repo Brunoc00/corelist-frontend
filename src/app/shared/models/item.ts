@@ -8,6 +8,9 @@ export interface Item {
   is_active: boolean;
   lista: number;
   produto: number;
+  // Adicione estas duas linhas abaixo para suportar os nomes
+  categoria_nome?: string;
+  produto_nome?: string;
   categoria?: {
     nome: string;
   };
