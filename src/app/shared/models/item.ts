@@ -1,9 +1,14 @@
 export interface Item {
   id?: number;
+  nome?: string;
   quantidade: number;
-  comprado: boolean;
+  preco: number;
   subtotal: number;
+  comprado: boolean;
+  is_active: boolean;
   lista: number;
   produto: number;
-  is_active: boolean;
+  categoria?: {
+    nome: string;
+  };
 }

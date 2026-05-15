@@ -3,7 +3,20 @@
   <span class="subtitulo">Visão geral do sistema</span>
 </div>
 
+<div class="chart-container" style="max-width: 900px; margin: 24px auto;">
+</div>
+
 <div class="cards">
+  <mat-card class="card">
+    <div class="card-icon verde" style="background-color: #2e7d32; color: white;">
+      <mat-icon>payments</mat-icon>
+    </div>
+    <div class="info">
+      <span class="numero">{{ valorTotalGasto | currency:'BRL' }}</span>
+      <span class="label">Total Gasto</span>
+    </div>
+  </mat-card>
+
   <mat-card class="card">
     <div class="card-icon azul">
       <mat-icon>people</mat-icon>
@@ -52,5 +65,22 @@
       <span class="numero">{{ totalItens }}</span>
       <span class="label">Itens</span>
     </div>
+  </mat-card>
+</div>
+
+<div class="chart-container" style="margin-top: 24px;">
+  <mat-card style="padding: 20px;">
+    <mat-card-header>
+      <mat-card-title>Gastos por Categoria</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div style="display: block; position: relative; height: 40vh; min-height: 300px;">
+        <canvas baseChart
+                [data]="barChartData"
+                [options]="barChartOptions"
+                [type]="barChartType">
+        </canvas>
+      </div>
+    </mat-card-content>
   </mat-card>
 </div>
