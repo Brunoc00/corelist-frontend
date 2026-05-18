@@ -1,4 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos globais do projeto CoreList */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden; /* Remove o "deslizar" horizontal definitivamente */
+}
+
+/* Configuração para exibir apenas o ícone da logo (sacolinha) */
+.logo-icon-only {
+  width: 60px;       /* Largura pequena para focar no ícone */
+  height: 60px;
+  overflow: hidden;  /* Esconde o texto da logo que sobrar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto; /* Centraliza na sidebar com respiro */
+}
+
+.logo-icon-only img {
+  height: 100%;      /* Mantém a altura proporcional ao container */
+  width: auto;
+
+  /* Truque: foca na parte esquerda da imagem (onde está o ícone)
+     e esconde o resto (onde está o texto) */
+  object-fit: cover;
+  object-position: left;
+}
+
+/* Força a tipografia do Angular Material em todo o corpo */
+body {
+  display: block;
+}

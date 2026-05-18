@@ -10,20 +10,28 @@ h2 {
 
 .card {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Alinha os itens em coluna (ícone em cima, texto embaixo) */
+  align-items: center;    /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
   gap: 16px;
   padding: 24px;
+  text-align: center;     /* Garante que o texto dentro das spans também centralize */
 }
+
 
 .icon {
   font-size: 48px;
   width: 48px;
   height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  align-items: center;    /* Centraliza o número e a label um em relação ao outro */
 }
 
 .numero {
@@ -35,9 +43,10 @@ h2 {
 .label {
   font-size: 14px;
   color: #666;
-  margin-top: 4px;
+  margin-top: 8px;        /* Aumentei um pouco o respiro entre número e texto */
 }
 
+/* Cores */
 .azul { color: #1565c0; }
 .verde { color: #4caf50; }
 .roxo { color: #7b1fa2; }

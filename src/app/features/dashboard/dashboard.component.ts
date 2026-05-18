@@ -30,6 +30,9 @@ export class DashboardComponent implements OnInit {
   totalItens = 0;
   valorTotalGasto = 0;
 
+  // Variável adicionada para controlar o ícone no HTML e resolver o erro NG9
+  isFullScreen = false;
+
   private todasCategorias: Categoria[] = [];
 
   public barChartOptions: ChartConfiguration['options'] = {
@@ -81,12 +84,10 @@ export class DashboardComponent implements OnInit {
     this.produtoService.listar().subscribe(res => this.totalProdutos = res.length);
     this.listaService.listar().subscribe(res => this.totalListas = res.length);
 
-    // 1º: Carregamos as categorias primeiro
     this.categoriaService.listar().subscribe(res => {
       this.totalCategorias = res.length;
       this.todasCategorias = res;
 
-      // 2º: Só então carregamos os itens
       this.itemService.listar().subscribe((itens: Item[]) => {
         this.totalItens = itens.length;
         this.valorTotalGasto = itens.reduce((total, item) => total + (Number(item.subtotal) || 0), 0);
@@ -101,15 +102,12 @@ export class DashboardComponent implements OnInit {
     itens.forEach(item => {
       let nomeCat = 'Sem Categoria';
 
-      // Prioridade 1: Campo categoria_nome (Opção B do Serializer)
       if (item.categoria_nome) {
         nomeCat = item.categoria_nome;
       }
-      // Prioridade 2: Objeto categoria aninhado
       else if (item.categoria && typeof item.categoria === 'object') {
         nomeCat = item.categoria.nome;
       }
-      // Prioridade 3: Se vier só o ID, busca na lista 'todasCategorias'
       else if (item.categoria) {
         const idProcurado = Number(item.categoria);
         const catEncontrada = this.todasCategorias.find(c => c.id === idProcurado);
@@ -138,5 +136,17 @@ export class DashboardComponent implements OnInit {
     };
 
     setTimeout(() => this.chart?.update(), 100);
+  }
+
+  toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      this.isFullScreen = true;
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+        this.isFullScreen = false;
+      }
+    }
   }
 }

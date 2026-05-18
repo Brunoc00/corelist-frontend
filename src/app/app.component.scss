@@ -1,0 +1,25 @@
+.sidebar-header {
+  width: 100%;
+  display: flex;
+  justify-content: center; // Centraliza horizontalmente
+  align-items: center;     // Centraliza verticalmente
+  padding: 40px 15px;      // Dá um bom espaço no topo para a logo respirar
+  box-sizing: border-box;
+}
+
+.main-logo {
+  // Aumentamos para ocupar quase toda a largura da sidebar
+  width: 90%;
+
+  // Aumentamos o limite máximo. Se quiser ainda maior, mude para 280px ou 300px
+  max-width: 250px;
+
+  height: auto;            // Mantém a proporção sem achatar
+  display: block;
+  object-fit: contain;
+
+  // Filtro opcional para deixar as cores mais vivas sobre o fundo escuro
+  filter: brightness(1.1) drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+}
+
+

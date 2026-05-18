@@ -1,14 +1,17 @@
-<div class="page-header">
-  <h2>Dashboard</h2>
-  <span class="subtitulo">Visão geral do sistema</span>
-</div>
+<div class="page-header" style="display: flex; justify-content: space-between; align-items: center;">
+  <div>
+    <h2>Dashboard</h2>
+    <span class="subtitulo">Visão geral do sistema</span>
+  </div>
 
-<div class="chart-container" style="max-width: 900px; margin: 24px auto;">
+  <button mat-icon-button (click)="toggleFullScreen()" title="Alternar Tela Cheia" style="background: none; border: none; cursor: pointer; color: #666;">
+    <mat-icon>{{ isFullScreen ? 'fullscreen_exit' : 'fullscreen' }}</mat-icon>
+  </button>
 </div>
 
 <div class="cards">
   <mat-card class="card">
-    <div class="card-icon verde" style="background-color: #2e7d32; color: white;">
+    <div class="icon verde">
       <mat-icon>payments</mat-icon>
     </div>
     <div class="info">
@@ -18,7 +21,7 @@
   </mat-card>
 
   <mat-card class="card">
-    <div class="card-icon azul">
+    <div class="icon azul">
       <mat-icon>people</mat-icon>
     </div>
     <div class="info">
@@ -28,7 +31,7 @@
   </mat-card>
 
   <mat-card class="card">
-    <div class="card-icon roxo">
+    <div class="icon roxo">
       <mat-icon>category</mat-icon>
     </div>
     <div class="info">
@@ -38,8 +41,7 @@
   </mat-card>
 
   <mat-card class="card">
-    <div class="card-icon escuro">
-      <mat-icon>inventory</mat-icon>
+    <div class="icon laranja"> <mat-icon>inventory</mat-icon>
     </div>
     <div class="info">
       <span class="numero">{{ totalProdutos }}</span>
@@ -48,8 +50,7 @@
   </mat-card>
 
   <mat-card class="card">
-    <div class="card-icon cinza">
-      <mat-icon>list_alt</mat-icon>
+    <div class="icon vermelho"> <mat-icon>list_alt</mat-icon>
     </div>
     <div class="info">
       <span class="numero">{{ totalListas }}</span>
@@ -58,7 +59,7 @@
   </mat-card>
 
   <mat-card class="card">
-    <div class="card-icon azul">
+    <div class="icon azul">
       <mat-icon>shopping_cart</mat-icon>
     </div>
     <div class="info">

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../core/services/auth/login.service';
+import { AuthService } from '../../../services/auth.service';
 
 
 
@@ -15,7 +15,7 @@ import { AuthService } from '../../../core/services/auth/login.service';
 })
 export class LoginComponent {
 
-  username = '';
+  email = '';
   password = '';
   loading = false;
   errorMsg = '';
@@ -30,20 +30,17 @@ export class LoginComponent {
     this.loading = true;
 
     this.auth.login({
-      username: this.username,
+      email: this.email,
       password: this.password
     }).subscribe({
-      next: (res) => {
-        // 🔐 salva o token
+      next: (res: any) => {
         this.auth.setToken(res.access);
 
-        // (opcional) salvar usuário
         localStorage.setItem('user', JSON.stringify(res.user));
 
-        // 🚀 redireciona
-        this.router.navigate(['/dashboard']); // ajuste a rota que você tiver
+        this.router.navigate(['/dashboard']);
       },
-      error: (err) => {
+      error: (err: any) => {
         this.loading = false;
 
         if (err?.error?.non_field_errors) {

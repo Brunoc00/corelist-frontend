@@ -4,6 +4,26 @@
   text-align: center;
 }
 
+.sidebar-logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; // Centraliza horizontalmente
+  align-items: center;     // Centraliza verticalmente
+  padding: 40px 10px;      // Dá um espaço no topo para a logo não ficar "colada"
+  box-sizing: border-box;
+}
+
+.sidebar-logo {
+  width: 90%;              // Faz a logo ocupar quase toda a largura lateral
+  max-width: 280px;        // Define o tamanho máximo (aumente aqui se quiser maior)
+  height: auto;
+  display: block;
+  object-fit: contain;
+
+  // Efeito para destacar a logo no fundo roxo
+  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+}
+
 #logo {
   width: 15rem;
   height: 11rem;
